@@ -11,7 +11,7 @@
   <body>
     <header>
       <div class="title">
-        <a href="index.html">Shortest Path Finder</a>
+        <a href="index.html">Graph Algorithm Visualizer</a>
         <a href="./instructions.html"
           ><img
             src="https://cdn4.iconfinder.com/data/icons/web-mobile1/100/Untitled-8-512.png"
@@ -19,33 +19,28 @@
         /></a>
       </div>
       <div class="options">
-        <div>
-          <button class="outline-btn" id="add-edge-enable" onclick="addEdges()">
-            Add edges
-          </button>
-          <button
-            class="outline-btn reset-btn"
-            onclick="resetDrawingArea()"
-            disabled
-          >
-            Clear
-          </button>
-        </div>
-        <div>
-          <input
-            type="text"
-            inputmode="numeric"
-            id="source-node"
-            placeholder="Source Node"
-          />
-          <button
-            class="outline-btn run-btn"
-            onclick="findShortestPath(this)"
-            disabled
-          >
-            Run
-          </button>
-        </div>
+        <button id="add-edge-enable" onclick="addEdges()">Add Edges</button>
+        <button class="reset-btn" onclick="resetDrawingArea()">Clear</button>
+        <input
+          type="text"
+          inputmode="numeric"
+          id="source-node"
+          placeholder="Source Node"
+        />
+        <input
+          type="text"
+          inputmode="numeric"
+          id="target-node"
+          placeholder="Target Node"
+        />
+        <select id="algorithm-select">
+          <option value="dijkstra">Dijkstra's Algorithm</option>
+          <option value="bfs">Breadth-First Search (BFS)</option>
+          <option value="dfs">Depth-First Search (DFS)</option>
+          <option value="kruskal">Kruskal's Algorithm</option>
+          <option value="bellmanford">Bellman-Ford Algorithm</option>
+        </select>
+        <button class="run-btn" onclick="runAlgorithm()">Run</button>
       </div>
     </header>
     <div class="drawing-area">
